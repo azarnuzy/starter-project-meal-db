@@ -18,41 +18,35 @@ import { meals } from '../../utils/recipesData';
 
 export const LandingPageModules: FC = () => {
   const data = meals.filter((item) => item.strMeal[0].toLowerCase() === 'e');
-
-  function getWindowSize() {
-    const { innerWidth, innerHeight } = window;
-    return { innerWidth, innerHeight };
-  }
-
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-
-  const getSlidesPerView = () => {
-    if (windowSize.innerWidth > 1280) {
-      return 6;
-    } else if (windowSize.innerWidth > 1024) {
-      return 5;
-    } else if (windowSize.innerWidth > 768) {
-      return 4;
-    } else {
-      return 3;
-    }
-  };
+  const [screenWidth, setScreenWidth] = useState(1);
 
   useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-    if (typeof window !== 'undefined') {
-      try {
-        window.addEventListener('resize', handleWindowResize);
+    const handleResize = () => {
+      const width = window.innerWidth;
 
-        return () => {
-          window.removeEventListener('resize', handleWindowResize);
-        };
-      } catch (error) {
-        console.log(error);
+      if (width > 1280) {
+        setScreenWidth(6);
+      } else if (width > 1024) {
+        setScreenWidth(5);
+      } else if (width > 768) {
+        setScreenWidth(6);
+      } else if (width > 640) {
+        setScreenWidth(4);
+      } else {
+        setScreenWidth(3);
       }
-    }
+    };
+
+    // Inisialisasi lebar layar awal
+    handleResize();
+
+    // Tambahkan event listener untuk memantau perubahan lebar layar
+    window.addEventListener('resize', handleResize);
+
+    // Hapus event listener saat komponen tidak lagi digunakan
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -72,7 +66,7 @@ export const LandingPageModules: FC = () => {
         spaceBetween={10}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        slidesPerView={getSlidesPerView()}
+        slidesPerView={screenWidth}
       >
         {data.map((item) => {
           return (

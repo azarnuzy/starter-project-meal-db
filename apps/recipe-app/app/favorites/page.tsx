@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 const MealsPage: NextPage = () => {
   return (
     <>
-      <MealsModules title={'All Meals'} />
+      <MealsModules title={'My Favorite Meals'} />
     </>
   );
 };

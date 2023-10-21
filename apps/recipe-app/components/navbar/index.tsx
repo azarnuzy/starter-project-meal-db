@@ -29,6 +29,12 @@ export default function Navbar() {
         >
           <li>Meals</li>
         </Link>
+        <Link
+          href="/favorites"
+          className={`${pathname === '/favorites' ? 'active' : undefined}`}
+        >
+          <li>Favorites</li>
+        </Link>
       </ul>
       <div className=" flex m-auto w-full lg:w-[50%] md:shrink">
         <div className="w-10 h-10 flex justify-center items-center  rounded-y-2xl rounded-l-2xl bg-gray-100 ">
