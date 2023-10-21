@@ -1,17 +1,21 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     join(
       __dirname,
-      '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+      '{src,pages,components,modules}/**/*!(*.stories|*.spec).{ts,tsx,html}'
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+  darkMode: 'none',
+
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ['Montserrat, sans-serif'],
+      },
       colors: {
         primary: '#F4D8D2',
         secondary: '#48d0ce',
@@ -19,5 +23,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };

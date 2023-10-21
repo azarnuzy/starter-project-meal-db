@@ -2,13 +2,18 @@
   "name": "@starter-project/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start-dev": "yarn nx serve recipe-app",
+    "build": "yarn nx build recipe-app",
+    "start-build": "yarn nx serve recipe-app --prod"
+  },
   "private": true,
   "dependencies": {
     "@nx/next": "17.0.1",
     "next": "13.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

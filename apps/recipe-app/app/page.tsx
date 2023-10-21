@@ -1,8 +1,14 @@
+import { LandingPageModules } from '../modules/landing-page';
+
 export default async function Index() {
   /*
    * Replace the elements below with your own.
    *
    * Note: The corresponding styles are in the ./index.css file.
    */
-  return <div>Halo</div>;
+  return (
+    <div>
+      <LandingPageModules />
+    </div>
+  );
 }

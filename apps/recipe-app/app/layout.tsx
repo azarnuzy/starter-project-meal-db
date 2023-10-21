@@ -1,4 +1,6 @@
+import Navbar from '../components/navbar';
 import './global.css';
+import React from 'react';
 
 export const metadata = {
   title: 'Recipe App',
@@ -13,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="max-w-6xl m-auto md:mx-4 lg:mx-auto">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
