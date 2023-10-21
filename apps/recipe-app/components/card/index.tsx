@@ -23,7 +23,6 @@ export default function Card({ meal }: { meal: TMeal }) {
             alt={meal.strMeal}
           />
         </Link>
-
         <h3 className="px-3 pt-2 font-semibold text-lg">{meal.strMeal}</h3>
         <div className="px-3 flex justify-between">
           <h4 className=" font-medium text-md">{meal.strCategory || ''}</h4>
