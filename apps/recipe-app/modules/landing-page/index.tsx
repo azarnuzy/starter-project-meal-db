@@ -81,7 +81,7 @@ export const LandingPageModules: FC = () => {
               className="p-2 flex justify-center items-center rounded-md w-fit text-sm  font-bold text-[#5e3a32] flex-col h-fit hover:opacity-90 cursor-pointer text-center"
             >
               <div>
-                <div>
+                <Link href={`/meals/${item.idMeal}`}>
                   <Image
                     width={200}
                     height={200}
@@ -91,7 +91,7 @@ export const LandingPageModules: FC = () => {
                   />
 
                   {item.strMeal}
-                </div>
+                </Link>
               </div>
             </SwiperSlide>
           );
