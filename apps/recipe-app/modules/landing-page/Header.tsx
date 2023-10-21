@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 export const Header: FC = () => {
   return (
     <>
-      <div className="mx-2 rounded-lg bg-primary pt-5 px-7 flex sm:flex-row justify-center sm:justify-between sm:mx-8 items-start mt-5 h-[65vh] md:h-[60vh] lg:h-[45vh] -z-[100]  py-8">
+      <div className=" rounded-lg bg-primary pt-5 px-7 flex sm:flex-row justify-center sm:justify-between items-start mt-5 h-[65vh] md:h-[60vh] lg:h-[45vh] -z-[100]  py-8">
         <div className="w-fit flex flex-col items-start justify-center">
           <h1 className="font-semibold text-3xl mt-5">Meal</h1>
           <h2 className="font-semibold text-3xl my-2">Database</h2>

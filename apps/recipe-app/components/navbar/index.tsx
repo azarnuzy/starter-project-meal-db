@@ -9,7 +9,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex  flex-col md:flex-wrap md:justify-between md:gap-5 md:mx-10 md:flex-row lg:flex-row mx-6 md:mt-3 mb-4">
+    <nav className="flex   flex-col md:flex-wrap md:justify-between md:gap-5 md:mx-10 md:flex-row lg:flex-row mx-6 md:mt-3 mb-4">
       <div className="relative flex items-center">
         <div className="w-20 h-20 m-auto absolute top-0 right-1/2 transform rotate-45 translate-x-1/2 -z-10 -translate-y-[43%] lg:-translate-y-[45%] lg:w-25 lg:h-25 rounded-md  bg-primary"></div>
         <Link
@@ -39,10 +39,7 @@ export default function Navbar() {
         <input
           id="search-input"
           type="text"
-          //   value={meal}
-          //   onChange={(e) => setMeal(e.target.value)}
-          //   onKeyDown={(e) => handleKeyPressed(e)}
-          className="w-full rounded-y-2xl rounded-r-2xl bg-gray-100 "
+          className="w-full rounded-y-2xl rounded-r-2xl bg-gray-100 focus:outline-none focus:border-transparent"
           placeholder="Search Meal and more"
         />
       </div>
