@@ -15,9 +15,18 @@ import 'swiper/css/pagination';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import Image from 'next/image';
 import { meals } from '../../utils/recipesData';
+import { useGetMealsByFirstLetter } from '../../hooks/meals/hook';
 
 export const LandingPageModules: FC = () => {
-  const data = meals.filter((item) => item.strMeal[0].toLowerCase() === 'e');
+  // const data = meals.filter((item) => item.strMeal[0].toLowerCase() === 'e');
+
+  const randomAlphabet = () => {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const random = Math.floor(Math.random() * alphabet.length);
+    return alphabet[random];
+  };
+
+  const { data } = useGetMealsByFirstLetter(randomAlphabet());
   const [screenWidth, setScreenWidth] = useState(1);
 
   useEffect(() => {
@@ -68,7 +77,7 @@ export const LandingPageModules: FC = () => {
         scrollbar={{ draggable: true }}
         slidesPerView={screenWidth}
       >
-        {data.map((item) => {
+        {data?.meals?.map((item) => {
           return (
             <SwiperSlide
               key={item.strMeal}
@@ -79,7 +88,10 @@ export const LandingPageModules: FC = () => {
                   <Image
                     width={200}
                     height={200}
-                    src={item.strMealThumb}
+                    src={
+                      item.strMealThumb ||
+                      'https://www.themealdb.com/images/media/meals/c7lzrl1683208757.jpg'
+                    }
                     alt={item.strMeal}
                     className="rounded-full p-2"
                   />

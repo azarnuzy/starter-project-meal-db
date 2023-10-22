@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 export type TMeal = {
   idMeal: string;
   strMeal: string;
@@ -50,4 +52,8 @@ export type TMeal = {
   strMeasure20?: string | null;
   strSource?: string | null;
   dateModified?: string | null;
+};
+
+export type TMealResponse = {
+  meals: Array<TMeal>;
 };

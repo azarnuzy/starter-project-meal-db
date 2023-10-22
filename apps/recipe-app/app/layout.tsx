@@ -1,4 +1,5 @@
 import Navbar from '../components/navbar';
+import Provider from '../components/provider';
 import './global.css';
 import React from 'react';
 
@@ -16,10 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="max-w-[1440px] w-full px-4 sm:px-6 md:px-8 lg:px-16 mx-auto ">
-          <Navbar />
-          {children}
-        </main>
+        <Provider>
+          <main className="max-w-[1440px] w-full px-4 sm:px-6 md:px-8 lg:px-16 mx-auto ">
+            <Navbar />
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   );
