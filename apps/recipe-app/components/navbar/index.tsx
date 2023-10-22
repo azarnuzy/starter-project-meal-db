@@ -20,7 +20,10 @@ export default function Navbar() {
         </Link>
       </div>
       <ul className="flex justify-center gap-8 my-4 lg:order-last">
-        <Link href="" className={` ${pathname === '/' ? 'active' : undefined}`}>
+        <Link
+          href="/"
+          className={` ${pathname === '/' ? 'active' : undefined}`}
+        >
           <li>Home</li>
         </Link>
         <Link
